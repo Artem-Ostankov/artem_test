@@ -1,0 +1,214 @@
+{{!< default_ang}}
+
+{{! Off Canvas }}
+{{> all_page/at_off_canvas }}
+
+{{! Header }}
+{{> all_page/at_header }}
+
+
+    <script type="text/javascript" src="/assets/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/js/data.js"></script>
+    <script type="text/javascript" src="/assets/js/responsive-tables.js"></script>
+
+    <div class="container" style=" padding-top: 80px; border-left:1px solid #ccc;border-right:1px solid #ccc">
+        <div class="row">
+            <div class="small-2 column">
+                <img class="img-rounded img-responsive" src="/assets/img/me_small.jpg" alt="Artem Face Image">
+            </div>
+            <div class="small-3 column hidden-xs hidden-sm">&nbsp;</div>
+            <div class="small-9 column">
+                <h1>Artem Ostankov</h1>
+
+                <h3>Software Developer</h3>
+
+                <p><span style="display:block;width:25px;float:left"><i class="icon-home"></i></span><span>München, Germany</span>
+                </p>
+
+                <p><span style="display:block;width:25px;float:left"><i class="icon-envelope"></i></span><span>artem@ostankov.com</span>
+                </p>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="small-4 small-centered column">
+                <h2>Work Experience</h2>
+            </div>
+        </div>
+        <hr/>
+        <div class="list-group-item" ng-repeat="work in workCtrl.workExp">
+            <div class="row">
+                <div class="small-3 column" style="text-align:right">
+                    <p class="lead">{[{work.start}]} - {[{work.end}]}</p>
+                    <p class="text-right" >
+                        <img  class="img-rounded" ng-show="{[{work.img != null}]}" ng-src={[{work.img}]} />
+                    </p>
+                </div>
+                <div class="small-9 column">
+                    <p class="lead">Senior Software Developer</p>
+                    <dl class="dl-horizontal">
+                        <dt>Company</dt>
+                        <dd>{[{work.company}]} </dd>
+                        <dt ng-show="{[{work.site != null}]}" >Site</dt>
+                        <dd ng-show="{[{work.site != null}]}" ><a href="http://{[{work.site}]}/" >{[{work.site}]}</a></dd>
+                        <dt>City</dt>
+                        <dd>{[{work.city}]}</dd>
+                        <dt>Activity field</dt>
+                        <dd>{[{work.desc}]}</dd>
+                    </dl>
+                    <h4>Responsibilities:</h4>
+                    <ul ng-repeat="resp in work.resp">
+                        <li>{[{resp}]}</li>
+                    </ul>
+                </div>
+            </div>
+            </br>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="small-4 small-centered column">
+                <h2>Studies</h2>
+            </div>
+        </div>
+        <hr/>
+        <div class="list-group-item" ng-repeat="study in workCtrl.studies">
+            <div class="row">
+                <div class="small-3 column" style="text-align:right"><p class="lead">{[{study.start}]} - {[{study.end}]}</p></div>
+                <div class="small-9 column">
+                    <p class="lead">{[{study.title}]}</p>
+                    <div class="dl-horizontal">
+                        <p>{[{study.org}]}, {[{study.city}]}</p>
+                        <p>{[{study.department}]}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="small-4 small-centered column">
+                <h2>Personal Interests</h2>
+            </div>
+        </div>
+        <div >
+            <div class="row">
+                <div class="small-5 column" ng-repeat="interest in workCtrl.interests">
+                    <ul>
+                        <li>{[{interest}]}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="small-4 small-centered column">
+                <h2>Additional notes</h2>
+            </div>
+        </div>
+        <div >
+            <div class="row">
+                <div class="small-5 column" ng-repeat="addition in workCtrl.additions">
+                    <ul>
+                        <li>{[{addition}]}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="small-4 small-centered column">
+                <h2>Languages</h2>
+            </div>
+        </div>
+        <div  class="small-6 small-centered column">
+            <table class="responsive">
+                <thead>
+                    <tr>
+                        <th width="400" >
+                            Title
+                        </th>
+                        <th width="400" >
+                            Level
+                        </th>
+                        <th width="400" >
+                            Experience
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="progLang in workCtrl.progLangs | orderBy:'-lvl'">
+                        <td>
+                            {[{progLang.title}]}
+                        </td>
+                        <td>
+                            {[{workCtrl.getExp(progLang.lvl)}]}
+                        </td>
+                        <td>
+                            {[{progLang.exp}]}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr/>
+            <div class="row">
+                <div class="small-4 small-centered column">
+                    <h2>Technologies</h2>
+                </div>
+            </div>
+            <div class="small-6 small-centered column">
+                <table class="responsive">
+                    <thead>
+                    <tr>
+                        <th width="400" >
+                            Title
+                        </th>
+                        <th width="400">
+                            Level
+                        </th>
+                        <th width="400">
+                            Experience
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="tech in workCtrl.techs | orderBy:'-lvl'">
+                        <td>
+                            {[{tech.title}]}
+                        </td>
+                        <td>
+                            {[{workCtrl.getExp(tech.lvl)}]}
+                        </td>
+                        <td>
+                            {[{tech.exp}]}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr/>
+        <div class="row">
+            <div class="small-4 small-centered column">
+                <h2>Languages</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-5 column">
+                <dl class="dl-horizontal">
+                    <dt>Native:</dt>
+                    <dd>Russian and Ukrainian</dd>
+                    <dt>Fluent:</dt>
+                    <dd>English</dd>
+                    <dt>Middle:</dt>
+                    <dd>German</dd>
+                </dl>
+            </div>
+        </div>
+        </div>
+        
+    
+    
+    
+
+{{! Footer }}
+{{> all_page/at_footer }}
