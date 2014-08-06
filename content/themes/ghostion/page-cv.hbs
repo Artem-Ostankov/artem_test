@@ -12,8 +12,8 @@
     <script type="text/javascript" src="/assets/js/data.js"></script>
     <script type="text/javascript" src="/assets/js/responsive-tables.js"></script>
 
-    <div class="container" style=" padding-top: 80px; border-left:1px solid #ccc;border-right:1px solid #ccc">
-        <div class="row">
+    <div class="container" style="  margin: 20px; border-left:1px solid #ccc;border-right:1px solid #ccc">
+        <div class="row" >
             <div class="small-2 column">
                 <img class="img-rounded img-responsive" src="/assets/img/me_small.jpg" alt="Artem Face Image">
             </div>
@@ -32,33 +32,41 @@
         </div>
         <hr/>
         <div class="row">
-            <div class="small-4 small-centered column">
+            <div class="small-6 small-centered column">
                 <h2>Work Experience</h2>
             </div>
         </div>
-        <hr/>
-        <div class="list-group-item" ng-repeat="work in workCtrl.workExp">
-            <div class="row">
-                <div class="small-3 column" style="text-align:right">
-                    <p class="lead">{[{work.start}]} - {[{work.end}]}</p>
-                    <p class="text-right" >
-                        <img  class="img-rounded" ng-show="{[{work.img != null}]}" ng-src={[{work.img}]} />
-                    </p>
+        
+        <div style="border:1px solid #ccc; margin-left: 20px; margin-right: 20px "  ng-repeat="work in workCtrl.workExp">
+            <div class="row" style = "max-width: 100rem;">
+                <div class="small-3 column" style="text-align:center">
+                    <h4 class="lead">{[{work.start}]} - {[{work.end}]}</h4>
                 </div>
-                <div class="small-9 column">
-                    <p class="lead">Senior Software Developer</p>
-                    <dl class="dl-horizontal">
-                        <dt>Company</dt>
-                        <dd>{[{work.company}]} </dd>
-                        <dt ng-show="{[{work.site != null}]}" >Site</dt>
-                        <dd ng-show="{[{work.site != null}]}" ><a href="http://{[{work.site}]}/" >{[{work.site}]}</a></dd>
-                        <dt>City</dt>
-                        <dd>{[{work.city}]}</dd>
-                        <dt>Activity field</dt>
-                        <dd>{[{work.desc}]}</dd>
-                    </dl>
-                    <h4>Responsibilities:</h4>
-                    <ul ng-repeat="resp in work.resp">
+                <h4  class="small-9 column">{[{work.title}]}</h4>
+            </div>
+            <div class="row" style = "max-width: 100rem;" >
+                <div class="small-7 column" >
+                    <div class="row" >
+                        <div class="small-5 column" style="text-align:center">
+                            <img  class="img-rounded" ng-show="{[{work.img != null}]}" ng-src={[{work.img}]} />
+                        </div>
+                        <div class="small-7 column right" >
+                            <dl class="dl-horizontal">
+                                <dt>Company</dt>
+                                <dd>{[{work.company}]} </dd>
+                                <dt ng-show="{[{work.site != null}]}" >Site</dt>
+                                <dd ng-show="{[{work.site != null}]}" ><a href="http://{[{work.site}]}/" >{[{work.site}]}</a></dd>
+                                <dt>City</dt>
+                                <dd>{[{work.city}]}</dd>
+                                <dt>Activity field</dt>
+                                <dd>{[{work.desc}]}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="small-5 column">
+                    <h4 style="margin-bottom:10px;" >Responsibilities:</h4>
+                    <ul ng-repeat="resp in work.resp" >
                         <li>{[{resp}]}</li>
                     </ul>
                 </div>
@@ -67,7 +75,7 @@
         </div>
         <hr/>
         <div class="row">
-            <div class="small-4 small-centered column">
+            <div class="small-6 small-centered column">
                 <h2>Studies</h2>
             </div>
         </div>
@@ -86,7 +94,7 @@
         </div>
         <hr />
         <div class="row">
-            <div class="small-4 small-centered column">
+            <div class="small-6 small-centered column">
                 <h2>Personal Interests</h2>
             </div>
         </div>
@@ -101,7 +109,7 @@
         </div>
         <hr/>
         <div class="row">
-            <div class="small-4 small-centered column">
+            <div class="small-6 small-centered column">
                 <h2>Additional notes</h2>
             </div>
         </div>
@@ -116,8 +124,8 @@
         </div>
         <hr/>
         <div class="row">
-            <div class="small-4 small-centered column">
-                <h2>Languages</h2>
+            <div class="small-6 small-centered column">
+                <h2>Programming Languages</h2>
             </div>
         </div>
         <div  class="small-6 small-centered column">
@@ -152,7 +160,7 @@
         </div>
         <hr/>
             <div class="row">
-                <div class="small-4 small-centered column">
+                <div class="small-6 small-centered column">
                     <h2>Technologies</h2>
                 </div>
             </div>
@@ -188,7 +196,7 @@
             </div>
             <hr/>
         <div class="row">
-            <div class="small-4 small-centered column">
+            <div class="small-6 small-centered column">
                 <h2>Languages</h2>
             </div>
         </div>

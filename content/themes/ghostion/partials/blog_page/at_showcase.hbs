@@ -2,16 +2,13 @@
 	<div class="at_blog_cover" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
 	    <div class="at_showcase_overlay {{#if @blog.cover}}at_with_blog_cover{{/if}}">
 			<div class="row">
-				<div class="small-4  column">
-					<div class="text-center">
-						<img src="/assets/img/me_small.jpg" alt="Artem Face Image" style="margin:10px; -webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;">
-					</div>
-				</div>
-				<div class="small-8  column">
-					<div class="">
+				<div class="large-12 large-centered columns">
+					<div class="at_block">
 						<div class="text-center">
 							<h1 class="at_title">{{@blog.title}}</h1>
 							<h3 class="at_subtitle">{{@blog.description}}</h3>
+							<a href="https://github.com/axiantheme/ghostion/archive/master.zip" class="button radius">Download <span class="hide-for-small-only">Ghostion</span></a>
+							<h6 class="at_version">Version <strong>1.0.0</strong></h6>
 						</div>
 					</div>
 				</div>
